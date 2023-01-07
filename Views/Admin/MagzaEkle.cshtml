@@ -1,0 +1,27 @@
+﻿@model YildirimlarE.Models.Magza
+@{
+    ViewBag.Title = "MagzaEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Mağza Ekle</h2>
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.MagzaAdi)
+    @Html.TextBoxFor(x => x.MagzaAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FotoUrl)
+    @Html.TextBoxFor(x => x.FotoUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.AcilisTarih) (gün/ay/yıl)
+    @Html.TextBoxFor(x => x.AcilisTarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Sehir)
+    @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Mağzayı Ekle</button>
+</form>
+
+

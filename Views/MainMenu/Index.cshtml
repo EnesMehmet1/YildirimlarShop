@@ -1,0 +1,48 @@
+﻿@using YildirimlarE.Models
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<body>
+
+    <div class="header-bottom">
+   
+    </div>
+    <div class="header-banner">
+        <div class="wrap">
+            <div class="banner">
+                @Html.Action("Partial1", "MainMenu")
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class"content">
+        <div class="wrap2">
+            <div class="wrapper">
+                @foreach (var x in Model)
+                {
+                    <div class="con-top">
+                        <h3>Yıldırımlar</h3>
+                        <p>@x.Aciklama.Substring(0,600)</p>
+                    </div>
+                }
+            <div class="con-bot">
+                @Html.Action("Partial2", "MainMenu")
+                <div class="clear"></div>
+            </div>
+                <div class="grids">
+                    <div class="box1">
+                        @Html.Action("Partial4", "MainMenu")
+                        @Html.Action("Partial5", "MainMenu")
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+

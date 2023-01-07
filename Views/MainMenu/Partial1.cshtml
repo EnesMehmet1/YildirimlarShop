@@ -1,0 +1,32 @@
+﻿@using YildirimlarE.Models
+@model List<Magza>
+<div class="indent">
+
+    <h2 class="indent-left margin-bot">Yıldırımlar Mobilya</h2>
+    <div class="banner-left">
+        @foreach (var x in Model)
+        {
+            <div class="con-text">
+                <div class="grid1-img">
+                    <img src="~/web/images/glass.png" alt="">
+                </div>
+                <div class="grid1-desc">
+                    <p><a href="/Magza/MagzaDetay/@x.MagzaId">@x.MagzaAdi</a></p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        }
+        <div class="clear"></div>
+    </div>
+    <div class="header_bottom_right_images">
+
+        <div class="slider">
+            <ul class="rslides" id="slider1">
+                @foreach (var x in Model)
+                {
+                    <li><img src="@x.FotoUrl"   style="width:650px; height:400px" alt=""></li>
+                }
+                </ul>
+        </div>
+    </div>
+</div>

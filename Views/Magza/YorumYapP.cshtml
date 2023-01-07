@@ -1,0 +1,10 @@
+﻿<div class="content-form">
+    <h3>Mağzaya yorum yap</h3>
+    <form method="post">
+        <input type="hidden" placeholder="Id"  name="MagzaId" required  value="@ViewBag.dgr" />
+        <input type="text" placeholder="Kullanıcı Adı" required name="KullaniciAdi" />
+        <input type="text" placeholder="Email" required name="EMail" />
+        <textarea placeholder="Message" name="Yorum"></textarea>
+        <input type="submit" value="Gönder" />
+    </form>
+</div>

@@ -1,0 +1,27 @@
+﻿@model YildirimlarE.Models.Urun
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Ürün</h2>
+<form class="form-group" method="post">
+    <br />
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Stok)
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FotoUrl)
+    @Html.TextBoxFor(x => x.FotoUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.kategori.KategoriAd)
+    @Html.DropDownListFor(m => m.kategori.Id, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunAciklama )
+    @Html.TextBoxFor(x => x.UrunAciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Ürünü Ekle</button>
+</form>
+

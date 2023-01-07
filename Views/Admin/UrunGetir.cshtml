@@ -1,0 +1,36 @@
+﻿@model YildirimlarE.Models.Urun
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UrunGetir</h2>
+@using (Html.BeginForm("UrunGuncelle", "Admin", FormMethod.Post))
+{
+<div class="form-group">
+    <input type="hidden" placeholder="Id" name="UrunId" required value="@ViewBag.dgr2" />
+    <br />
+    @Html.LabelFor(m => m.Ad)
+    @Html.TextAreaFor(m => m.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.FotoUrl)
+    @Html.TextAreaFor(m => m.FotoUrl, new { @class = "form-control" })
+    <br />
+    @*<!--@Html.LabelFor(m => m.kategori.KategoriAd)
+        <br />
+        @Html.TextAreaFor(m => m.UrunKategori, new { @class = "form-control" })
+            @Html.DropDownListFor(k => k.kategori.Id, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })-->*@
+
+    <br />
+    @Html.LabelFor(m => m.UrunAciklama)
+    @Html.TextAreaFor(m => m.UrunAciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.Stok)
+    @Html.TextAreaFor(m => m.Stok, new { @class = "form-control" })
+    <br />
+</div>
+    <div>
+        <button class="btn btn-warning">Ürünü Güncelle</button>
+    </div>
+}
+

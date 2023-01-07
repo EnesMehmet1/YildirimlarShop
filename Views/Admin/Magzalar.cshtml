@@ -1,0 +1,38 @@
+﻿
+@using YildirimlarE.Models
+@model List<Magza>
+
+@{
+    ViewBag.Title = "Magzalar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Urunler</h2>
+<br />
+<table class="table table-border">
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Şehir</th>
+        <th>Açılış Tarihi</th>
+        <th>Sil</th>
+        <th>Detay</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.MagzaId</td>
+            <td>@x.MagzaAdi</td>
+            <td>@x.Sehir</td>
+            <td>@x.AcilisTarih.ToString("MM.dd.yyyy")</td>
+            <td><a href="/Admin/MagzaSil/@x.MagzaId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Magza/MagzaDetay/@x.MagzaId" class="btn btn-primary">Detay</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/MagzaEkle/" class="btn btn-primary">Yeni Magza</a>
+
+
+
+

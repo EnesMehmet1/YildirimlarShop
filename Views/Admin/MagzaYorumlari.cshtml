@@ -1,0 +1,35 @@
+﻿@using YildirimlarE.Models
+@model List<MagzaYorum>
+@{
+    ViewBag.Title = "MagzaYorumlari";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Mağza Yorumları</h2>
+
+<table class="table table-border">
+    <tr>
+        <th>Id</th>
+        <th>Kullanıcı adı</th>
+        <th>Yorum</th>
+        <th>E-Mail</th>
+        <th>MağzaId</th>
+        <th>Sil</th>
+        <th>Detay</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.MagzaId</td>
+            <td>@x.KullaniciAdi</td>
+            <td>@x.EMail</td>
+            <td>@x.EMail</td>
+            <td>@x.MagzaId</td>
+            <td><a href="/Admin/MagzaYorumSil/@x.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Urun/UrunDetay/@x.MagzaId" class="btn btn-primary">Detay</a></td>
+        </tr>
+    }
+</table>
+
+
+
